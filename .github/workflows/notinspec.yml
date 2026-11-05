@@ -1,0 +1,21 @@
+on:
+  pull_request:
+    paths: ["docs/**", "openapi.yaml", "notinspec.yaml"]
+  push:
+    branches: [master]
+    paths: ["docs/**", "openapi.yaml", "notinspec.yaml"]
+
+permissions:
+  contents: read
+  pull-requests: write # PR comment
+
+jobs:
+  notinspec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { fetch-depth: 0 } # git history, to find the changed docs
+      - uses: 19BROS/not-in-spec/action@v0
+        with:
+          server-url: https://147-175-151-17.sslip.io
+          server-token: ${{ secrets.NOTINSPEC_TOKEN }}

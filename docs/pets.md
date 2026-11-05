@@ -9,3 +9,5 @@ curl https://api.example.com/pets/1
 ```
 
 Pets are returned as JSON.
+
+<!-- notinspec-mock: fail -->

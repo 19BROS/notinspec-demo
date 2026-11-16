@@ -11,3 +11,5 @@ curl https://api.example.com/pets/1
 Pets are returned as JSON.
 
 Pets are returned sorted by id.
+
+<!-- notinspec-mock: fail -->

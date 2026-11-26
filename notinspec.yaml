@@ -1,6 +1,7 @@
 # fixture config for the Action test in CI and the demo repo (SPEC §2.3, shape is a candidate)
 # paths are relative to this file
 docs:
+  sphinx_xml: "build/xml/" # built by the workflow's build job (Sphinx 9.x, build-env.txt)
   paths: ["docs/**/*.md"]
   openapi: "openapi.yaml"
 formats: [curl]
